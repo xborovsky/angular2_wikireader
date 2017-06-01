@@ -1,0 +1,12 @@
+<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Click to search random wiki page</a>
+<br />
+<img src="assets/img/search.png" alt="Search" title="Search" width="30" height="30" (click)="changeIconVisibleState();"
+     [hidden]="!iconVisible" style="cursor: pointer;" />
+<br />
+<div [hidden]="iconVisible">
+    <input type="text" name="search" value="" 
+           placeholder="Type to search on wikipedia"
+           [(ngModel)]="searchText" (keyup.enter)="search(searchText)" class="form-control" />
+    <button (click)="changeIconVisibleState();" class="btn">cancel search</button>
+</div>
+<app-articles [articles]="articles"></app-articles>
